@@ -12,3 +12,16 @@ select title
 from "netflix_titles_info"
 order by title asc;
 
+#Who directed The Starling
+select director
+from "netflix_titles_info" as titles
+left join "netflix_people" as people
+on titles.show_id = people.show_id
+where titles.title = 'The Starling'
+
+#Find the oldest movie in the database and the year it was released
+select title, release_year
+from "netflix_titles_info"
+where type ='Movie'
+order by release_year asc
+limit 1
