@@ -1,0 +1,14 @@
+# How many titles are movies?
+SELECT count(*) 
+FROM "netflix_titles_info"
+where type = 'Movie';
+
+# When was the most recent batch of titles added?
+select max(date(date_added))
+from "netflix_titles_info";
+
+#List all Titles in alphabetical order
+select title
+from "netflix_titles_info"
+order by title asc;
+
